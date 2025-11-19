@@ -1,0 +1,38 @@
+
+library = []
+print("Enter 5 book titles:")
+for i in range(5):
+    book = input(f"Book {i+1}: ")
+    library.append(book)
+
+
+print("\nAdd 2 more books:")
+for i in range(2):
+    book = input(f"Extra Book {i+1}: ")
+    library.append(book)
+
+
+read_book = input("\nEnter the name of a book you have read: ")
+if read_book in library:
+    library.remove(read_book)
+    print(f"Removed '{read_book}' from library.")
+else:
+    print(f"'{read_book}' not found in library.")
+
+
+print("\nTotal books in library:", len(library))
+
+
+search_book = input("Enter a book name to check if it exists: ")
+if search_book in library:
+    print(f"'{search_book}' is in the library.")
+else:
+    print(f"'{search_book}' is not in the library.")
+
+
+library.sort()
+print("\nLibrary sorted A–Z:", library)
+
+
+library.sort(reverse=True)
+print("Library sorted Z–A:", library)
